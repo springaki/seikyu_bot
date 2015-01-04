@@ -9,6 +9,6 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
   cronTest = new cronJob('* * * * *', () =>
-    robot.send {room: "#general"}, "cronテスト", null, true, "Asia/Tokyo"
+    robot.send {room: "#general"}, "cronテスト"
   )
   cronTest.start()
