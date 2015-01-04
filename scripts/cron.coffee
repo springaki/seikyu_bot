@@ -8,7 +8,8 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  cronTest = new cronJob('* * * * *', () =>
-    robot.send {room: "#general"}, "cronテスト"
+  cronTest = new cronJob('*/5 * * * *', () =>
+    envelope = room: "#kumubot"
+    robot.send envelope, "cronテスト"
   )
   cronTest.start()
